@@ -12,7 +12,7 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/equipm
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors()); // Allow all origins for now. In production, configure this to allow only the frontend URL.
 app.use(helmet());
 app.use(morgan('dev'));
 
