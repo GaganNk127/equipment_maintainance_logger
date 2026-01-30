@@ -1,59 +1,210 @@
-# EquipmentMaintenanceLogger
+🛠️ Equipment Maintenance Logger
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+A full-stack MEAN (MongoDB, Express.js, Angular, Node.js) application designed to efficiently manage equipment, track maintenance activities, and proactively identify service requirements.
+The project focuses on real-world usability, clean architecture, and scalable design rather than just fulfilling basic CRUD operations.
 
-## Development server
+📌 Project Overview
 
-To start a local development server, run:
+The Equipment Maintenance Logger helps organizations maintain operational reliability by:
 
-```bash
-ng serve
-```
+Registering equipment and tracking service dates
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Logging maintenance activities
 
-## Code scaffolding
+Automatically determining service status
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Providing a clear maintenance history per equipment
 
-```bash
-ng generate component component-name
-```
+The application is built with a modular backend, a component-driven frontend, and persistent data storage, closely resembling how real production systems are structured.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+✨ Key Features
+🔧 Equipment Management
 
-```bash
-ng generate --help
-```
+Register equipment with:
 
-## Building
+Equipment Name
 
-To build the project run:
+Serial Number (unique)
 
-```bash
-ng build
-```
+Last Service Date
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Input validation on both frontend and backend
 
-## Running unit tests
+Persistent storage using MongoDB
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+📊 Smart Equipment Dashboard
 
-```bash
-ng test
-```
+View all registered equipment in a clean tabular layout
 
-## Running end-to-end tests
+Automatic service status calculation:
 
-For end-to-end (e2e) testing, run:
+🟢 OK – Serviced recently
 
-```bash
-ng e2e
-```
+🟡 Due Soon – Approaching service threshold
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+🔴 Due for Service – Requires immediate attention
 
-## Additional Resources
+Color-coded status badges for instant visibility
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+🛠️ Maintenance Logging
+
+Log maintenance activities using a dedicated form
+
+Each log updates the equipment’s last service date
+
+Ensures data consistency between equipment and maintenance records
+
+📜 Maintenance History
+
+View complete maintenance history for a selected equipment
+
+Sorted by most recent service first
+
+Clear timeline with service date and description
+
+📈 Summary Insights
+
+Total number of registered equipment
+
+Count of equipment that are due for service
+
+Enables quick high-level monitoring
+
+📱 Responsive & User-Friendly UI
+
+Clean Teal & Charcoal professional theme
+
+Mobile-responsive layout
+
+Loading indicators and clear user feedback messages
+
+🧠 Design & Architecture Decisions
+Backend
+
+RESTful API design with proper separation of concerns
+
+Controllers, routes, models, and utilities organized modularly
+
+Centralized logic for service-status calculation
+
+Robust error handling using middleware
+
+Environment-based configuration
+
+Frontend
+
+Angular standalone components with clear folder structure
+
+Reactive Forms for predictable state and validation
+
+Shared components (status badges, loaders) for reusability
+
+Services layer for API communication
+
+Pipes used for clean UI logic abstraction
+
+Data Modeling
+
+One-to-many relationship between Equipment and Maintenance
+
+Maintenance records linked using equipmentId
+
+Equipment service status derived dynamically from service date
+
+🧰 Tech Stack
+Frontend
+
+Angular (latest stable)
+
+TypeScript
+
+Reactive Forms
+
+SCSS
+
+Backend
+
+Node.js
+
+Express.js
+
+Mongoose (MongoDB ODM)
+
+Database
+
+MongoDB
+
+📂 Project Structure
+equipment-maintenance-logger/
+│
+├── backend/
+│   ├── src/
+│   │   ├── config/
+│   │   ├── models/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── utils/
+│   │   ├── middlewares/
+│   │   ├── app.js
+│   │   └── server.js
+│
+├── frontend/
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── core/
+│   │   │   ├── shared/
+│   │   │   ├── pages/
+│   │   │   ├── app-routing.module.ts
+│   │   │   └── app.module.ts
+│   │   ├── environments/
+│   │   └── styles.scss
+│
+└── README.md
+
+⚙️ Local Setup Instructions
+Prerequisites
+
+Node.js (v18 or higher)
+
+MongoDB (local or Atlas)
+
+Backend Setup
+cd backend
+npm install
+
+
+Create a .env file:
+
+PORT=5000
+MONGODB_URI=<your_mongodb_connection_string>
+
+
+Start backend:
+
+npm run dev
+
+Frontend Setup
+cd frontend
+npm install
+npm start
+
+
+Open:
+
+http://localhost:4200
+
+🧪 Validation & Error Handling
+
+Required field validation on all forms
+
+User-friendly success and error messages
+
+Graceful handling of API failures
+
+Data remains consistent across refreshes
+
+👨‍💻 Author
+
+Gagan Naik
+Master of Computer Applications (MCA)
+Passionate about building scalable, real-world web applications using modern full-stack technologies.
