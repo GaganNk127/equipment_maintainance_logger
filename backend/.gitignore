@@ -1,10 +1,9 @@
-# Dependencies
+
 node_modules/
 
-# If backend is separate
 backend/node_modules/
+.env
 
-# Build outputs
 dist/
 build/
 .out/
